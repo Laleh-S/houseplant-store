@@ -1,10 +1,11 @@
 // import { useContext } from "react";
 import React, {useContext} from "react";
-import { allPlants } from "../../allPlants"
-import { ShopContext } from "../../context/shop-context";
+import { allPlants } from "../allPlants"
+import { ShopContext } from "../context/shop-context";
 import ItemsInCart from "./ItemsInCart"
 import "./cart.css";
 import { useNavigate } from "react-router-dom";
+import plantDetail from "../pages/plantDetail";
 
 function Cart() {
     const { cartItems, totalCartAmount } = useContext(ShopContext);
@@ -15,7 +16,7 @@ function Cart() {
     return (
         <div className="cart">
             <div>
-                <h1>Shopping Bag</h1>
+                <h1></h1>
             </div>
             <div className="cart">
                 {/* for each plant, if the plant.id has a value that not equal to 0, it means it's greater than 0  */ }
@@ -33,7 +34,7 @@ function Cart() {
                 <button onClick={() => (navigate("/"))}>Continue Shopping</button> {/* "/" -> takes us to the main page */}
                 <button>Checkout</button>
             </div>
-        : <h2>Your Shopping Bag is Empty!</h2>}
+        : <h2>Your Shopping Cart is Empty!</h2>}
         </div>
     )
 }

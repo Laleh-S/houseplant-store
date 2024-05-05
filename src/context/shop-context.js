@@ -5,25 +5,25 @@ import React, { createContext, useState } from "react";
 import { allPlants } from "../allPlants";
 
 
-const ShopContext = createContext(null);
+const ShopContext = createContext(null); 
 
-// ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Function to represent initial state of items in cart .◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
+// ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Function to represent the initial state of our shopping cart .◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
 // Creating an object with ids of allPlants equal to number of plants in the cart. id1 = 0
 function defaultCart () {
     let cart = {};
-    // Loop through allPlants.
+    // Loop through allPlants and assigns a key-value pair to the cart object, where key is the plant id and value set to 0;
     for(let i = 1; i < allPlants.length + 1; i++) {  // <- We set i = 1 because ids start with 1 not 0
-        cart[i] = 0; // for each plant, storing a key with value of 0
+        cart[i] = 0; // for each plant, storing a value of 0. because whenthe app starts running there is 0 item in the shopping card.
     } 
     return cart;
 };
 
 
-function ShopContextProvider(props) {
+function ShopContextProvider(props) {  // <- provider for shopContext
     // Our state is an object with a key=id of each plant. so for any ids we provide howmany items are currently in the cart.
     // initially all item's value would be 0, but if we want to add a product with certain id to cart, then that particular 
     // id's value will change to 1 and if we add more it will change to 2 and so on
-    const [cartItems, setCartItems] = useState(defaultCart()); // set the object above as our default state value.
+    const [cartItems, setCartItems] = useState(defaultCart()); // set the defaultCart () object above as our default state value.
     
      // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Get Total Cart Amount ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
         function totalCartAmount(){
@@ -38,19 +38,18 @@ function ShopContextProvider(props) {
     };
 
 
-    // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Add to Cart Function ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
-    function addToCart(itemId) { // The id of the item we want to add to cart
+    // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Add Items to Cart Function ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
+    function addToCart(itemId) { // The id of the item we want to add to basket
         setCartItems(prev => {
-            const updatedCart = { ...prev };
-            const currentItemCount = updatedCart[itemId] || 0;
-            updatedCart[itemId] = currentItemCount + 1;
+            const updatedCart = { ...prev }; // Creating a copy of the previous cart state
+            const currentItemCount = updatedCart[itemId] || 0;  // Get the current count of the item in the cart or default to 0 if it doesn't exist
+            updatedCart[itemId] = currentItemCount + 1; 
             return updatedCart;
     });
-    // setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1})) // The shorthand way
     }
 
 
-    // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Remove From Cart Function ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
+    // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Remove items From Cart Function ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
      function removeFromCart(itemId) { // The id of the item we want to remove from cart
         setCartItems(prev => {
             const updatedCart = { ...prev };
@@ -76,7 +75,7 @@ function ShopContextProvider(props) {
     console.log(cartItems)
     
     return (
-        <ShopContext.Provider value={contextValue}> 
+        <ShopContext.Provider value={contextValue }> 
             {props.children}
         </ShopContext.Provider>
     );

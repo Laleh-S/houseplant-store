@@ -6,6 +6,7 @@ import chineeseEvergreen from "./assets/cineeseEvergreen.png"
 import fiddleLeafFig from "./assets/fiddleLeafFig.png"
 import pincushion from "./assets/pincushion.png"
 
+
 export const allPlants = [
     {
         "id": 1,
@@ -15,9 +16,10 @@ export const allPlants = [
     },
     {
         "id": 2,
-        plantName: "Pincushion",
+        plantName: "Spiny Pincushion ",
         price: 8.99,
         plantImage: pincushion,
+        
     },
     {
         "id": 3,
@@ -27,7 +29,7 @@ export const allPlants = [
     },
     {
         "id": 4,
-        plantName: "Chineese Evergreen",
+        plantName: "Chinese Evergreen",
         price: 16.99,
         plantImage: chineeseEvergreen,
     },
@@ -36,6 +38,7 @@ export const allPlants = [
         plantName: "Rattlesnake",
         price: 15.99,
         plantImage: rattlesnake,
+        
     },
     {
         "id": 6,
@@ -44,6 +47,8 @@ export const allPlants = [
         plantImage: fiddleLeafFig,
     },
 ];
+
+
 
 
 

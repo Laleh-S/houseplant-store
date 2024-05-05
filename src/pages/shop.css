@@ -1,4 +1,8 @@
     .shop-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         margin-top: 100px; 
         margin-bottom: 80px;
         text-align: center;
@@ -17,7 +21,7 @@
         border-radius: 15px;
         width: 300px;
         height: 350px;
-        margin: 120px; 
+        margin: 150px; 
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -47,7 +51,7 @@
     .addToCartBttn {
         background-color: transparent;
         margin-top: 5px; 
-        border: 2px solid hsl(171, 100%, 41%);
+        border: 2px solid rgb(75,143,18);
         min-width: 50px;
         padding-left: 10px;
         padding-right: 10px;
@@ -57,7 +61,8 @@
     }
     
     .addToCartBttn:hover {
-        background-color: hsl(171, 100%, 41%);
+        /* background-color: hsl(171, 100%, 41%); */
+        background-color: rgb(75, 143, 18);
         color: white;
         cursor: pointer;
     } 

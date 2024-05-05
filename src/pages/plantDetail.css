@@ -1,0 +1,37 @@
+.card-container {
+    display: flex;
+    width: 1300px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-left: 300px;
+    margin-top: 100px;
+}
+
+.card-details {
+    flex: 1;
+    margin: 100px;
+    
+
+}
+
+.card-details p {
+    text-align: justify;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.card-details button {
+    font-size: 16px;
+    padding: 12px;
+    margin-top: 20px;
+}
+
+.card-image {
+    flex: 1;
+    margin: 30px;
+    margin-left: 80px;
+}
+
+.card-image img {
+    max-width: 100%;
+}

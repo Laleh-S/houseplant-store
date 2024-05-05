@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import { FaShoppingBag } from "react-icons/fa";
-import { RiHandbagFill } from "react-icons/ri";
+import { LuShoppingBasket } from "react-icons/lu";
 import "./Navbar.css"
 
 function Navbar() {
@@ -10,8 +9,7 @@ function Navbar() {
         <div className="Navbar">
             <div className="links">
                 <Link to="/"> Store </Link> 
-                <Link to="/cart"> <FaShoppingBag  size={25}/></Link>
-
+                <Link to="/cart"> <LuShoppingBasket  size={30}/></Link>
             </div>
         </div>
     )
