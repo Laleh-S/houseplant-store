@@ -15,7 +15,9 @@ function PlantDetail() {
     }
 
     const cartItemAmount = cartItems[id];  // The amount of this spesific id in our cart
-    
+    const PlantDescription = ({ description }) => { //using destructuring to extract the description prop from 
+        return <div dangerouslySetInnerHTML={{ __html: description }} />;
+    };
 
 
     return (
@@ -28,7 +30,7 @@ function PlantDetail() {
             </div>
             <div className="card-details">
                 <h1>{plant.plantName}</h1>
-                <p>{plant.description}</p>
+                <PlantDescription description={plant.description} />
                 <p>Price: £{plant.price}</p>
                 <button className="addToCartBttn" onClick={() => addToCart(id)}>
                     Add to basket

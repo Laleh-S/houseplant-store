@@ -14,7 +14,9 @@
 
 }
 
-.card-details p {
+.card-details p,
+.PlantDescription p 
+{
     text-align: justify;
     font-size: 18px;
     margin-top: 20px;
@@ -35,3 +37,6 @@
 .card-image img {
     max-width: 100%;
 }
+
+
+
