@@ -5,6 +5,7 @@ import Shop from "./pages/shop"
 import Cart from "./pages/cart"
 import PlantDetail from "./pages/plantDetail"
 import ShopContextProvider from "./context/shop-context";
+import plant from "./pages/plant"
 
 function App() {
 

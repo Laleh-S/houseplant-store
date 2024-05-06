@@ -15,10 +15,12 @@ function PlantDetail() {
     }
 
     const cartItemAmount = cartItems[id];  // The amount of this spesific id in our cart
-    const PlantDescription = ({ description }) => { //using destructuring to extract the description prop from 
-        return <div dangerouslySetInnerHTML={{ __html: description }} />;
-    };
 
+    // dangerouslySetInnerHTML: A React feature allowing us to set raw HTML content inside a component. It's considered "dangerous" because it can expose your application to Cross-Site Scripting (XSS) attacks if not used carefully.
+    // const PlantDescription = ({ description }) => { //using destructuring to extract the description prop from 
+    //     return <div dangerouslySetInnerHTML={{ __html: description }} />;
+    // };
+    
 
     return (
         <div className="card-container">
@@ -30,7 +32,12 @@ function PlantDetail() {
             </div>
             <div className="card-details">
                 <h1>{plant.plantName}</h1>
-                <PlantDescription description={plant.description} />
+                {/* <h4>{plant.description}</h4> */}
+                <div className="description">
+                    {plant.description.split('\n').map((paragraph) => (
+                        <p >{paragraph}</p>
+                    ))}
+                </div>
                 <p>Price: £{plant.price}</p>
                 <button className="addToCartBttn" onClick={() => addToCart(id)}>
                     Add to basket

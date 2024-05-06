@@ -10,13 +10,12 @@
 .card-details {
     flex: 1;
     margin: 100px;
-    
+
 
 }
 
 .card-details p,
-.PlantDescription p 
-{
+.PlantDescription p {
     text-align: justify;
     font-size: 18px;
     margin-top: 20px;
@@ -38,5 +37,7 @@
     max-width: 100%;
 }
 
-
-
+.description p {
+    margin-bottom: 20px;
+    
+}
