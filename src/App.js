@@ -5,17 +5,16 @@ import Shop from "./pages/shop"
 import Cart from "./pages/cart"
 import PlantDetail from "./pages/plantDetail"
 import ShopContextProvider from "./context/shop-context";
-import plant from "./pages/plant"
+import Plants from "./pages/shop";
 
 function App() {
-
     return (
         <div className="App">
             <ShopContextProvider>{/* Allows all bellow components to have access to shopCntextProvider */}
                 <Router>
                     <Navbar/> {/* We want Navbar to be above Routes so it can be seen in all Routes */}
                     <Routes>
-                        <Route path="/" element={<Shop />}/> {/* "/" means its our main page. Where we see all the products */}
+                        <Route path="/" element={<Plants />}/> {/* "/" means its our main page. Where we see all the products */}
                         <Route path="/cart" element={<Cart />}/>
                         <Route path="/plant/:id" element={<PlantDetail />} />
                     </Routes>

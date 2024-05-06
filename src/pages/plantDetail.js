@@ -32,13 +32,14 @@ function PlantDetail() {
             </div>
             <div className="card-details">
                 <h1>{plant.plantName}</h1>
-                {/* <h4>{plant.description}</h4> */}
                 <div className="description">
-                    {plant.description.split('\n').map((paragraph) => (
-                        <p >{paragraph}</p>
+                    {/* ".split('\n')" splits the text in "plant.description" into paragraphs when there's a newline character ('\n'). */}
+                    {/* ".map((paragraph, index)" loops over each paragraph that resulted from splitting the text and performs an action for each one. */}
+                    {plant.description.split('\n').map((paragraph, index) => (  
+                        <p key={index}>{paragraph}</p> //  "key={index}" is a unique identifier.
                     ))}
                 </div>
-                <p>Price: £{plant.price}</p>
+                <p><b>Price: £{plant.price}</b></p>
                 <button className="addToCartBttn" onClick={() => addToCart(id)}>
                     Add to basket
                     {cartItemAmount > 0 && ` (${cartItemAmount})`}

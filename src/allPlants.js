@@ -13,12 +13,14 @@ export const allPlants = [
         plantName: "Snake Plant",
         price: 12.99,
         plantImage: snakePlant,
+        description: ``
     },
     {
         "id": 2,
         plantName: "Spiny Pincushion ",
         price: 8.99,
         plantImage: pincushion,
+        description: ``
         
     },
     {
@@ -26,23 +28,21 @@ export const allPlants = [
         plantName: "Ceropegia Woodii",
         price: 15.99,
         plantImage: ceropegiaWoodii,
+        description: ``
     },
     {
         "id": 4,
         plantName: "Chinese Evergreen",
         price: 25.99,
         plantImage: chineeseEvergreen,
+        description: ``
     },
     {
         "id": 5,
         plantName: "Rattlesnake",
         price: 28.99,
         plantImage: rattlesnake,
-        description: `The Rattlesnake Plant, is a species of flowering plant in the Marantaceae family, 
-        native to Rio de Janeiro state in Brazil. It is an evergreen perennial, growing to 60–75 cm, 
-        with slender pale green leaves to 45 cm, heavily marked above with dark blotches, purple below. 
-        The rattlesnake plant thrives in moist, warm, semi-shady climates. If conditions are just right, 
-        the plant produces bright, yellow-orange blooms in late spring and early summer.`
+        description: `The Rattlesnake Plant, is a species of flowering plant in the Marantaceae family, native to Rio de Janeiro state in Brazil. It is an evergreen perennial, growing to 60–75 cm, with slender pale green leaves to 45 cm, heavily marked above with dark blotches, purple below. The rattlesnake plant thrives in moist, warm, semi-shady climates. If conditions are just right, the plant produces bright, yellow-orange blooms in late spring and early summer.`
     },
     {
         "id": 6,

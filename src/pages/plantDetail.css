@@ -33,11 +33,30 @@
     margin-left: 80px;
 }
 
-.card-image img {
-    max-width: 100%;
+
+.image {
+    border: 5px solid red;
 }
 
 .description p {
     margin-bottom: 20px;
     
 }
+
+.addToCartBttn {
+    background-color: transparent;
+    margin-top: 5px; 
+    border: 2px solid rgb(75,143,18);
+    min-width: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+
+.addToCartBttn:hover {
+    background-color: rgb(75, 143, 18);
+    color: white;
+    cursor: pointer;
+} 

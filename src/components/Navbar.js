@@ -8,7 +8,7 @@ function Navbar() {
     return (
         <div className="Navbar">
             <div className="links">
-                <Link to="/"> Store </Link> 
+                <Link to="/"> Plants </Link> 
                 <Link to="/cart"> <LuShoppingBasket  size={30}/></Link>
             </div>
         </div>

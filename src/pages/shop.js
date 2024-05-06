@@ -1,24 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { ShopContext } from "../context/shop-context";
 import { allPlants } from "../allPlants";
-import Plant from "./plant";
 import "./shop.css";
 
-
-
 function Shop() {
+    const { addToCart, cartItems } = useContext(ShopContext);
+
     return (
         <div className="shop">
-            <div className="shop-title">
-                <img src="/logo512.png" alt="Shop Image" width={80}/>
+            <div className="page-title">
+                <img src="/logo512.png" width={80}/>
                 <h1>Evergreen Plants</h1>
             </div>
             <div className="plants">
                 {allPlants.map((plant)=> { 
-                    return <Plant data={plant} key={plant.id}/> //Rturning Plant objects in the allPlants array.
+                    const { id, plantImage, plantName } = plant;
+                    return (
+                        <div className="plant" key={id}>
+                            <Link  to={`/plant/${id}`}>
+                                <img className="image" src={plantImage} alt={plantName} />
+                            </Link>
+                            <div className="plant-name">
+                                <h3>{plantName}</h3>
+                            </div>
+                        </div>
+                    );
                 })}
             </div>
         </div>
-    )
+    );
 }
-export default Shop;
 
+export default Shop;
