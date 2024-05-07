@@ -33,7 +33,7 @@
 
 .card-image img{
     width: 500px;
-    height: 700px;
+    max-height: 700px;
 }
 
 

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/shop-context";
 import { allPlants } from "../allPlants";
@@ -30,7 +30,7 @@ function PlantDetail() {
                     {/* ".split('\n')" splits the text in "plant.description" into paragraphs when there's a newline character ('\n'). */}
                     {/* ".map((paragraph, index)" loops over each paragraph that resulted from splitting the text and performs an action for each one. */}
                     {plant.description.split('\n').map((paragraph, index) => (  
-                        <p key={index}>{paragraph}</p> //  "key={index}" is a unique identifier.
+                        <p key={index}>{paragraph}</p> //  "key={index}" <- unique identifier.
                     ))}
                 </div>
                 <p><b>Price: £{plant.price}</b></p>
