@@ -10,12 +10,9 @@
 .card-details {
     flex: 1;
     margin: 100px;
-
-
 }
 
-.card-details p,
-.PlantDescription p {
+.card-details p {
     text-align: justify;
     font-size: 18px;
     margin-top: 20px;
@@ -34,29 +31,27 @@
 }
 
 
-.image {
-    border: 5px solid red;
+.card-image img{
+    width: 500px;
+    height: 700px;
 }
+
 
 .description p {
     margin-bottom: 20px;
-    
 }
 
-.addToCartBttn {
-    background-color: transparent;
-    margin-top: 5px; 
+/* Styling for the .addToCartBttn class */
+.addToBasketBttn {
     border: 2px solid rgb(75,143,18);
-    min-width: 50px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 10px;
+    background-color: rgb(75, 143, 18);
+    border-radius: 8px;
+    color: white;
+    padding: 100px;
 }
 
-.addToCartBttn:hover {
-    background-color: rgb(75, 143, 18);
+.addToBasketBttn:hover {
+    background-color: rgb(19, 20, 19);
     color: white;
     cursor: pointer;
 } 

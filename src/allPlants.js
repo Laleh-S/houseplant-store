@@ -1,7 +1,7 @@
 
 import snakePlant from "./assets/snakePlant.png"
 import rattlesnake from "./assets/rattlesnake.png"
-import ceropegiaWoodii from "./assets/ceropegiaWoodii.png"
+import stringOfHearts from "./assets/stringOfHearts.png"
 import chineeseEvergreen from "./assets/cineeseEvergreen.png"
 import fiddleLeafFig from "./assets/fiddleLeafFig.png"
 import pincushion from "./assets/pincushion.png"
@@ -13,45 +13,44 @@ export const allPlants = [
         plantName: "Snake Plant",
         price: 12.99,
         plantImage: snakePlant,
-        description: ``
+        description: `The snake plant, scientifically known as Sansevieria trifasciata, is a popular indoor plant appreciated for its striking appearance and low maintenance requirements. It belongs to the Asparagaceae family and is native to tropical West Africa.`
     },
     {
         "id": 2,
-        plantName: "Spiny Pincushion ",
+        plantName: "Spiny Pincushion",
         price: 8.99,
         plantImage: pincushion,
-        description: ``
+        description: `The Spiny Pincushion, scientifically known as Mammillaria spinosissima, is a species of cactus native to Mexico. It belongs to the Cactaceae family, which is known for its diverse and often strikingly unique members.`
         
     },
     {
         "id": 3,
-        plantName: "Ceropegia Woodii",
+        plantName: "String of Hearts",
         price: 15.99,
-        plantImage: ceropegiaWoodii,
-        description: ``
+        plantImage: stringOfHearts,
+        description: `The String of Hearts plant, scientifically known as Ceropegia woodii, is a trailing succulent vine native to southern Africa. It belongs to the Apocynaceae family and is cherished for its delicate heart-shaped leaves and trailing growth habit.`
     },
     {
         "id": 4,
         plantName: "Chinese Evergreen",
         price: 25.99,
         plantImage: chineeseEvergreen,
-        description: ``
+        description: `The Chinese Evergreen, scientifically known as Aglaonema, is a genus of flowering plants in the Araceae family. Native to tropical and subtropical regions of Asia, including China, Thailand, Indonesia, and the Philippines, Chinese Evergreens are popular ornamental plants prized for their attractive foliage and ease of care.`
     },
     {
         "id": 5,
         plantName: "Rattlesnake",
         price: 28.99,
         plantImage: rattlesnake,
-        description: `The Rattlesnake Plant, is a species of flowering plant in the Marantaceae family, native to Rio de Janeiro state in Brazil. It is an evergreen perennial, growing to 60–75 cm, with slender pale green leaves to 45 cm, heavily marked above with dark blotches, purple below. The rattlesnake plant thrives in moist, warm, semi-shady climates. If conditions are just right, the plant produces bright, yellow-orange blooms in late spring and early summer.`
+        description: `The Rattlesnake Plant, scientifically known as Calathea lancifolia, is a species of tropical plant native to Brazil. It belongs to the Marantaceae family and is appreciated for its striking foliage and unique leaf patterns.`
     },
     {
         "id": 6,
         plantName: "Fiddle Leaf Fig",
         price: 159.99,
         plantImage: fiddleLeafFig,
-        description: `Ficus Lyrata, commonly known as the fiddle-leaf fig, is a species of fig family Moraceae. It is native to West Africa. Fiddle leaf Fig grows over 15 metres tall in its natural habitat and up to 3 metres indoors. They can be topped to prevent them from growing taller. 
-        Fiddle-leaf is a broadleaf evergreen houseplant. It has large, glossy, deep green violin-shaped leaves. It’s ideal for growing in a warm, bright room, out of the glare of the direct sun. But also they grow well in greenhouses and conservatories because they enjoy high lighting conditions. It is a slow-growing plant that may take up to 10 -15 years to reach full maturity. 
-        `
+        description: `The Fiddle Leaf Fig plant, scientifically known as Ficus lyrata, is a species of tropical tree native to western Africa, specifically from Sierra Leone to Cameroon. It belongs to the Moraceae family and is renowned for its large, glossy, violin-shaped leaves, which give it a distinctive and elegant appearance.`
+        
     },
 ];
 

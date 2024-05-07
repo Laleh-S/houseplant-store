@@ -10,7 +10,7 @@ function Shop() {
     return (
         <div className="shop">
             <div className="page-title">
-                <img src="/logo512.png" width={80}/>
+                <img src="/logo512.png" width={80}  style={{ marginBottom: '23px' }}/>
                 <h1>Evergreen Plants</h1>
             </div>
             <div className="plants">
@@ -19,7 +19,7 @@ function Shop() {
                     return (
                         <div className="plant" key={id}>
                             <Link  to={`/plant/${id}`}>
-                                <img className="image" src={plantImage} alt={plantName} />
+                                <img  src={plantImage} alt={plantName} />
                             </Link>
                             <div className="plant-name">
                                 <h3>{plantName}</h3>

@@ -16,12 +16,6 @@ function PlantDetail() {
 
     const cartItemAmount = cartItems[id];  // The amount of this spesific id in our cart
 
-    // dangerouslySetInnerHTML: A React feature allowing us to set raw HTML content inside a component. It's considered "dangerous" because it can expose your application to Cross-Site Scripting (XSS) attacks if not used carefully.
-    // const PlantDescription = ({ description }) => { //using destructuring to extract the description prop from 
-    //     return <div dangerouslySetInnerHTML={{ __html: description }} />;
-    // };
-    
-
     return (
         <div className="card-container">
             <div className="card-image">
@@ -40,7 +34,7 @@ function PlantDetail() {
                     ))}
                 </div>
                 <p><b>Price: £{plant.price}</b></p>
-                <button className="addToCartBttn" onClick={() => addToCart(id)}>
+                <button className="addToBasketBttn" onClick={() => addToCart(id)}>
                     Add to basket
                     {cartItemAmount > 0 && ` (${cartItemAmount})`}
                 </button>

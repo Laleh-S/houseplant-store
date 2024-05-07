@@ -1,4 +1,4 @@
-// import { useContext } from "react";
+
 import React, {useContext} from "react";
 import { allPlants } from "../allPlants"
 import { ShopContext } from "../context/shop-context";
@@ -32,7 +32,8 @@ function Cart() {
             <div className="checkout">
                 <p>Total: £{totalAmount} </p>
                 <button onClick={() => (navigate("/"))}>Continue Shopping</button> {/* "/" -> takes us to the main page */}
-                <button>Checkout</button>
+                <button onClick={() => navigate()}>CProceed to Checkout</button>
+                {/* <button>Proceed to Checkout</button> */}
             </div>
         : <h2>Your Shopping Cart is Empty!</h2>}
         </div>
