@@ -1,19 +1,19 @@
-// Here is where we define our states and anything related to logic that need to be accessed anywhere in our project.
-// Example: I can use the states created here in our Shop as well as our Cart
+// Here is where i defined all of the states and anything related to logic that need to be accessed anywhere in the project.
+// I can use the states created here in my Shop and my Cart
 
 import React, { createContext, useState } from "react";
 import { allPlants } from "../allPlants";
 
 
-const ShopContext = createContext(null); 
+export const ShopContext = createContext(null); 
 
 // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Function to represent the initial state of our shopping cart .◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
-// Creating an object with ids of allPlants equal to number of plants in the cart. id1 = 0
+// Creating an object with ids of allPlants equal to number of plants in the cart. 
 function defaultCart () {
     let cart = {};
     // Loop through allPlants and assigns a key-value pair to the cart object, where key is the plant id and value set to 0;
-    for(let i = 1; i < allPlants.length + 1; i++) {  // <- We set i = 1 because ids start with 1 not 0
-        cart[i] = 0; // for each plant, storing a value of 0. because whenthe app starts running there is 0 item in the shopping card.
+    for(let i = 1; i < allPlants.length + 1; i++) {  // <- setting i = 1 because ids start with 1 not 0
+        cart[i] = 0; // storing a value of 0 for each plant, because when the app first starts running there is 0 item in the shopping card.
     } 
     return cart;
 };
@@ -23,7 +23,11 @@ function ShopContextProvider(props) {  // <- provider for shopContext
     // Our state is an object with a key=id of each plant. so for any ids we provide howmany items are currently in the cart.
     // initially all item's value would be 0, but if we want to add a product with certain id to cart, then that particular 
     // id's value will change to 1 and if we add more it will change to 2 and so on
-    const [cartItems, setCartItems] = useState(defaultCart()); // set the defaultCart () object above as our default state value.
+    const [cartItems, setCartItems] = useState(defaultCart()); // setting "defaultCart()" object above as our default value.
+
+    // State for search functionality //
+    const [searchQuery, setSearchQuery] = useState("");
+
     
      // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Get Total Cart Amount ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
         function totalCartAmount(){
@@ -33,6 +37,7 @@ function ShopContextProvider(props) {  // <- provider for shopContext
                 let itemInfo = allPlants.find((plant) => plant.id === Number(item))
                 totalAmount += cartItems[item] * itemInfo.price
             }
+            
         }
         return totalAmount
     };
@@ -71,6 +76,8 @@ function ShopContextProvider(props) {  // <- provider for shopContext
         removeFromCart, 
         updateItemInCart,
         totalCartAmount,
+        searchQuery, 
+        setSearchQuery
         }  
     console.log(cartItems)
     
@@ -82,4 +89,4 @@ function ShopContextProvider(props) {  // <- provider for shopContext
 };
 
 export default ShopContextProvider;
-export {ShopContext};
+

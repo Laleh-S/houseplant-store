@@ -8,7 +8,7 @@
     transition: background-color 0.3s ease; /* creates smoother color change */
 }
 
-/* Change background color on hover */
+/* Background color change on hover */
 .Navbar:hover {
     background-color: rgb(55,113,0); 
 }
@@ -27,8 +27,10 @@
     transition: color 0.3s ease; 
 }
 
-/* Change text color on hover */
+/* Text color change on hover */
 .links a:hover {
     color: rgba(255,255,255,0.7); 
 }
+
+
 
