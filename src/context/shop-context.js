@@ -20,7 +20,7 @@ function defaultCart () {
 
 
 function ShopContextProvider(props) {  // <- provider for shopContext
-    // Our state is an object with a key=id of each plant. so for any ids we provide howmany items are currently in the cart.
+    // Our state is an object with a key=id of each plant. so for any ids we provide how many items are currently in the cart.
     // initially all item's value would be 0, but if we want to add a product with certain id to cart, then that particular 
     // id's value will change to 1 and if we add more it will change to 2 and so on
     const [cartItems, setCartItems] = useState(defaultCart()); // setting "defaultCart()" object above as our default value.
