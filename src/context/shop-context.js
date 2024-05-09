@@ -25,7 +25,7 @@ function ShopContextProvider(props) {  // <- provider for shopContext
     // id's value will change to 1 and if we add more it will change to 2 and so on
     const [cartItems, setCartItems] = useState(defaultCart()); // setting "defaultCart()" object above as our default value.
 
-    // State for search functionality //
+    // State for search functionality 
     const [searchQuery, setSearchQuery] = useState("");
 
     
@@ -77,7 +77,7 @@ function ShopContextProvider(props) {  // <- provider for shopContext
         updateItemInCart,
         totalCartAmount,
         searchQuery, 
-        setSearchQuery
+        setSearchQuery,
         }  
     console.log(cartItems)
     
