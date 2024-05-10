@@ -25,3 +25,14 @@
     max-height: 550px;
 }
 
+.plant-name {
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    color: #5d5a5a;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.plant:hover .plant-name {
+    opacity: 1;
+}

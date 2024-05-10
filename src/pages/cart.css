@@ -41,13 +41,20 @@
 
     .checkout button {
         padding: 15px;
-        background-color: rgb(75,143,18);
+        background-color: #191818;
         color: white; 
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         margin: 10px;
+        margin-right: 20px;
         cursor: pointer;
         font-size: 16px;
+    }
+
+    .checkout button:hover {
+        background-color: #423f3f;
+        color: white;
+        cursor: pointer;
     }
 
     .checkout p {

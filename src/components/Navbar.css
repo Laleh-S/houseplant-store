@@ -5,12 +5,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s ease; /* creates smoother color change */
+    transition: background-color 0.3s ease; 
 }
 
 /* Background color change on hover */
 .Navbar:hover {
-    background-color: rgb(75,143,18);
+    background-color: #4b8f12;
 }
 
 .center-content {
@@ -71,7 +71,7 @@
 .page-title a {
     text-decoration: none;
     color: white;
-    font-size: 15px; /* Adjust the font size */
+    font-size: 15px; 
 }
 
 
