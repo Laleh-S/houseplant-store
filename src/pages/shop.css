@@ -38,10 +38,11 @@
 
 .shop {
     display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
+    justify-content: center; 
+    align-items: center; 
     flex-direction: column; /* To stack the search bar on top of the plants */
 }
+
 
 .search-container {
     display: flex;

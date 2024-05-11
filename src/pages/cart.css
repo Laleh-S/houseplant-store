@@ -59,4 +59,6 @@
 
     .checkout p {
         padding-left: 10px;
+        font-size: 18px;
+        text-transform: uppercase;
     }

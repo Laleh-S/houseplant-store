@@ -6,14 +6,13 @@
 // initially all item's value would be 0, but if we want to add a product with certain id to cart, then that particular 
 // id's value will change to 1 and if we add more it will change to 2 and so on
 
-import React, { createContext, useState, useEffect  } from "react";
+import React, { createContext, useState } from "react";
 import { allPlants } from "../allPlants";
 
 
 export const ShopContext = createContext(null); 
 
-// ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Function to represent the initial state of our shopping cart .◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
-
+// ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Function to set the initial state of our shopping cart ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
 function defaultCart () {
     // Looping through allPlants and assigns a key-value pair to the cart object, where key is the plant id and value set to 0;
     let cart = {};
@@ -23,10 +22,18 @@ function defaultCart () {
     return cart;
 };
 
-function ShopContextProvider(props) {  // <- provider for shopContext
+    function ShopContextProvider(props) {  // <- provider for shopContext
+
+    // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ States ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
     const [cartItems, setCartItems] = useState(defaultCart()); // setting "defaultCart()" object above as our default value.
     const [searchQuery, setSearchQuery] = useState(""); // State for search functionality 
-    const [searchResults, setSearchResults] = useState([]);
+
+
+    // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Clears filter when clicking on shop link ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
+    function clearFilter() {
+        setSearchQuery("");
+    }
+
 
     // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Get Total Cart Amount ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
     function totalCartAmount(){
@@ -69,16 +76,15 @@ function ShopContextProvider(props) {  // <- provider for shopContext
 
 
     const contextValue = {
-        cartItems, // Passing in everything we need to access outside this file.
+        cartItems, 
         addToCart, 
         removeFromCart, 
         updateItemInCart,
         totalCartAmount,
         searchQuery, 
         setSearchQuery,
-        searchResults,
+        clearFilter,
         }  
-    console.log(cartItems)
     
     return (
         <ShopContext.Provider value={contextValue }> 
