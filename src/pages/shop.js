@@ -3,17 +3,20 @@ import { ShopContext } from "../context/shop-context";
 import { Link } from "react-router-dom";
 import { allPlants } from "../allPlants";
 import "./shop.css";
+import Searchbar from '../components/Searchbar';
+
 
 function Shop() {
-    const { searchQuery, setSearchQuery } = useContext(ShopContext);
+    const { searchQuery, setSearchQuery,} = useContext(ShopContext);
     // Function to filter plants based on the search query
     
     const filteredPlants = allPlants.filter(plant =>
-        plant.plantName.toLowerCase().includes(searchQuery.toLowerCase())
+        plant.plantName && plant.plantName.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     return (
         <div className="shop">
+            <Searchbar />
             <div className="plants">
                 {filteredPlants.map((plant)=> { 
                     const { id, plantImage, plantName } = plant;

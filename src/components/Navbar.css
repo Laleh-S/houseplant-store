@@ -56,12 +56,6 @@
     align-items: center;
 }
 
-.input-group .search {
-    width: 200px;
-    border: 0px;
-    padding: 10px;
-    border-radius: 8px;
-}
 
 .input-group .search:focus {
     outline: none;

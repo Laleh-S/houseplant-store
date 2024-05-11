@@ -7,10 +7,11 @@ import "./plantDetail.css";
 function PlantDetail() {
     // useParams() allows access to parts of URL (like IDs) inside our component. we set up the path="/plant/:id" path in App.js
     const { id } = useParams();
-    const { addToCart, cartItems } = useContext(ShopContext);
+    const { addToCart, cartItems, filteredPlants} = useContext(ShopContext);
 
+    // Find the plant in the filteredPlants array
     const plant = allPlants.find((plant) => plant.id === parseInt(id));
-    if (!plant) {
+    if (!plant ) {
         return <div>Plant not found</div>;
     }
 
