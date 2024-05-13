@@ -51,24 +51,28 @@ function defaultCart () {
     
 
     // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Add Items to Cart Function ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
-    function addToCart(itemId) { // The id of the item we want to add to basket
+    function addToCart(itemId) {
         setCartItems(prev => {
             const updatedCart = { ...prev }; // Creating a copy of the previous cart state
-            const currentItemCount = updatedCart[itemId] || 0;  // Get the current count of the item in the cart or default to 0 if it doesn't exist
+            let currentItemCount = 0;
+            if (updatedCart[itemId] !== null && updatedCart[itemId] !== undefined) {
+                currentItemCount = updatedCart[itemId];
+            }
             updatedCart[itemId] = currentItemCount + 1; 
             return updatedCart;
-    });
+            });
     }
 
 
     // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Remove items From Cart Function ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
-    function removeFromCart(itemId) { // The id of the item we want to remove from cart
+    function removeFromCart(itemId) {
         setCartItems(prev => {
             const updatedCart = { ...prev };
-            const currentItemCount = updatedCart[itemId] || 0;
-            updatedCart[itemId] = currentItemCount - 1;
+            if (updatedCart[itemId] !== null && updatedCart[itemId] !== undefined) {
+                updatedCart[itemId] = updatedCart[itemId] - 1;
+            }
             return updatedCart;
-    });
+        });
     }
 
     // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Update cart Function ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 

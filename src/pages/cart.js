@@ -1,5 +1,6 @@
 
-import React, {useContext, useState} from "react";
+import React, { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { allPlants } from "../allPlants"
 import { ShopContext } from "../context/shop-context";
 import ItemsInCart from "./ItemsInCart"
@@ -9,13 +10,21 @@ import "./cart.css";
 function Cart() {
     const { cartItems, setCartItems, totalCartAmount, checkoutComplete, setCheckoutComplete } = useContext(ShopContext);
     const totalAmount = totalCartAmount()
-
+    const navigate = useNavigate();
 
     function handleCheckout () {
         setCartItems();
         // Dummy checkout process
         setCheckoutComplete(true);
     };
+
+    // Resets checkoutComplete to false when leaving the cart page
+        useEffect(() => {
+            function cleanup () {
+                setCheckoutComplete(false);
+            };
+        return cleanup;
+    }, []); // [] means the effect runs only once after the initial render.
 
     return  (
         <div className="cart">
