@@ -25,14 +25,16 @@ function defaultCart () {
     function ShopContextProvider(props) {  // <- provider for shopContext
 
     // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ States ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
+    // Can access the all states in any component that consumes the ShopContext by using the useContext hook.
     const [cartItems, setCartItems] = useState(defaultCart()); // setting "defaultCart()" object above as our default value.
     const [searchQuery, setSearchQuery] = useState(""); // State for search functionality 
+    const [checkoutComplete, setCheckoutComplete] = useState(false);
 
 
-    // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Clears filter when clicking on shop link ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
+    // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Clears filtered plants after clicking on shop link ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
     function clearFilter() {
         setSearchQuery("");
-    }
+    };
 
 
     // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Get Total Cart Amount ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
@@ -71,12 +73,14 @@ function defaultCart () {
 
     // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Update cart Function ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
     function updateItemInCart(newAmount, itemId) {
+        newAmount = Math.max(0, Math.floor(newAmount)); 
         setCartItems((prev) => ({...prev, [itemId]: newAmount}))
     };
 
 
     const contextValue = {
         cartItems, 
+        setCartItems,
         addToCart, 
         removeFromCart, 
         updateItemInCart,
@@ -84,6 +88,8 @@ function defaultCart () {
         searchQuery, 
         setSearchQuery,
         clearFilter,
+        checkoutComplete, 
+        setCheckoutComplete,
         }  
     
     return (

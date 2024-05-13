@@ -15,8 +15,13 @@ function PlantDetail() {
         return <div>Plant not found</div>;
     }
 
-    const cartItemAmount = cartItems[id];  // The amount of this spesific id in our cart
-
+    // Check if cartItems is defined and if it contains the quantity of the item with the specified id.
+    // If cartItems is undefined or the item quantity is not found, set cartItemQuantity to 0.
+    let cartItemAmount = 0
+    if (cartItems){
+        cartItemAmount = cartItems[id] || 0;
+    }
+    
     return (
         <div className="card-container">
             <div className="card-image">

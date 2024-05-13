@@ -2,9 +2,8 @@ import React, { useContext } from "react";
 import { ShopContext } from "../context/shop-context";
 import { Link } from "react-router-dom";
 import { allPlants } from "../allPlants";
-import "./shop.css";
 import Searchbar from '../components/Searchbar';
-
+import "./shop.css";
 
 function Shop() {
     const { searchQuery } = useContext(ShopContext);

@@ -26,7 +26,7 @@ function ItemsInCart(props) {
                 <div className="countHandler">
                     <button onClick={() => removeFromCart(id)}> - </button>
                     {/* event.target.value would be a string so it needs to be converted to a number */}
-                    <input value={cartItems[id]} onChange={handleInputChange} />
+                    <input value={cartItems[id]?? ""} onChange={handleInputChange} />
                     <button onClick={() => addToCart(id)}> + </button>
                 </div>
             </div>

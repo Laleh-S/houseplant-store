@@ -1,5 +1,5 @@
 
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import { allPlants } from "../allPlants"
 import { ShopContext } from "../context/shop-context";
 import ItemsInCart from "./ItemsInCart"
@@ -7,32 +7,50 @@ import "./cart.css";
 
 
 function Cart() {
-    const { cartItems, totalCartAmount } = useContext(ShopContext);
+    const { cartItems, setCartItems, totalCartAmount, checkoutComplete, setCheckoutComplete } = useContext(ShopContext);
     const totalAmount = totalCartAmount()
 
-    return (
+
+    function handleCheckout () {
+        setCartItems();
+        // Dummy checkout process
+        setCheckoutComplete(true);
+    };
+
+    return  (
         <div className="cart">
             <div>
                 <h1></h1>
             </div>
             <div className="cart-item">
-                {/* for each plant, if the value of plant.id is not equal to 0, then it's greater than 0, means the plant is already in the cart */}
                 {allPlants.map((plant, index) => {
-                    if (cartItems[plant.id] !== 0) {
-                        return <ItemsInCart data={plant} key={index}/> // if this is the case, return ItemsInCart component.
+                    if (cartItems && cartItems[plant.id] !== 0) {
+                        return <ItemsInCart data={plant} key={index}/>;
                     }
+                    return null;
                 })}
             </div>
         
-            {totalAmount > 0 ?
-                <div className="checkout">
-                    <p><b>Total: <span style={{ color: "#4b8f12" }}>£{totalAmount}</span> </b> </p>
-                    <button>Proceed to Checkout</button>
+            {checkoutComplete ? (
+                <div>
+                    <h2>Checkout is complete. Thank you!</h2>
                 </div>
-            : <h2>Your Basket is Empty!</h2>}
-    </div>
-
-    )
+            ) : (
+                <div className="checkout">
+                    {totalAmount > 0 ? (
+                        <>
+                            <p>
+                                <b>Total: <span style={{ color: "#4b8f12" }}>£{totalAmount}</span></b>
+                            </p>
+                            <button onClick={handleCheckout}>Proceed to Checkout</button>
+                        </>
+                    ) : (
+                        <h2>Your Basket is Empty!</h2>
+                    )}
+                </div>
+            )}
+        </div>
+    );
 }
 export default Cart;
 
