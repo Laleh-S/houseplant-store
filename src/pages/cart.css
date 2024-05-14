@@ -67,6 +67,10 @@
         text-transform: uppercase;
     }
 
+    .description p {
+        font-size: 12px;
+    }
+
 
 /* Media query for mobile */
 @media screen and (max-width: 768px) {
