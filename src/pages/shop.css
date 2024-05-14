@@ -1,46 +1,48 @@
 .plants {
     width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
-    place-items: center;
+    display: flex;
+    flex-wrap: wrap; /* Wrapping plants to the next line */
+    justify-content: space-around; /* Distributing plants along the main axis */
     margin-top: 50px;
 }
 
-
 .plant {
-    border-radius: 15px;
-    width: 300px;
-    height: 350px;
-    margin: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: calc(33.33% - 40px); /* Adjust width to fit three plants per row with margins */
+    max-width: 300px; /* Prevent overflow */
+    margin: 20px; 
+    text-align: center; 
 }
 
 .plant img {
-    width: 400px;
-    max-height: 550px;
+    width: 100%; /* Ensuring the image fills its container */
+    height: auto; /* Adjusts based on content */
+    border-radius: 15px; 
 }
 
 .plant-name {
-    text-align: center;
-    margin-top: 20px;
-    opacity: 0;
+    margin-top: 10px;
     color: #5d5a5a;
+    font-size: 16px; 
     transition: opacity 0.3s ease-in-out;
+    opacity: 0;
 }
 
 .plant:hover .plant-name {
     opacity: 1;
 }
 
+/* Adjust the layout for smaller screens */
+@media screen and (max-width: 768px) {
+    .plant {
+        width: calc(50% - 40px); /* Adjusts width to fit two plants per row with margins */
+    }
+}
+
 .shop {
     display: flex;
-    justify-content: center; 
+    justify-content: center; /* Horizontal centering */
     align-items: center; 
-    flex-direction: column; /* To stack the search bar on top of the plants */
+    flex-direction: column; /* stacking the search bar on top of the plants */
 }
 
 
@@ -71,4 +73,46 @@
 
 *:focus {
     outline: none;
+}
+
+
+
+
+/* Mobile styling */
+@media screen and (max-width: 768px) {
+    .plants {
+        grid-template-columns: 1fr; /* Display one plant per row on smaller screens */
+        margin-top: 20px; /* Adjust margin for spacing */
+    }
+
+    .plant {
+        width: calc(100% - 40px); /* Adjust width to fit the screen */
+        max-width: 300px; /* Set max width to prevent overflow */
+        margin: 20px auto; /* Center the plant horizontally */
+        height: auto; 
+    }
+
+    .plant img {
+        width: 100%; /* Ensure image fills its container */
+        max-height: 300px; 
+        border-radius: 15px; 
+    }
+
+    .plant-name {
+        margin-top: 10px; 
+        font-size: 16px; 
+    }
+
+    .shop {
+        margin-top: 20px;
+    }
+
+    .search-container {
+        width: 90%; /* Adjust width to fit the screen */
+    }
+
+    .search-input {
+        font-size: 16px; 
+        padding: 10px 10px 10px 50px; 
+    }
 }

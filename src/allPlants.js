@@ -5,6 +5,8 @@ import stringOfHearts from "./assets/stringOfHearts.png"
 import chineseEvergreen from "./assets/chineseEvergreen.png"
 import fiddleLeafFig from "./assets/fiddleLeafFig.png"
 import pincushion from "./assets/pincushion.png"
+import redAnthurium from "./assets/redAnthurium.png"
+import rubberPlant from "./assets/rubberPlant.png"
 
 
 export const allPlants = [
@@ -50,7 +52,20 @@ export const allPlants = [
         price: 159.99,
         plantImage: fiddleLeafFig,
         description: `The Fiddle Leaf Fig plant, scientifically known as Ficus lyrata, is a species of tropical tree native to western Africa, specifically from Sierra Leone to Cameroon. It belongs to the Moraceae family and is renowned for its large, glossy, violin-shaped leaves, which give it a distinctive and elegant appearance.`
-        
+    },
+    {
+        "id": 7,
+        plantName: "Red Anthurium",
+        price: 29.99,
+        plantImage: redAnthurium,
+        description: `The red anthurium plant, scientifically known as Anthurium andraeanum, is a popular houseplant prized for its striking, glossy red flowers and lush, dark green foliage. Native to tropical regions of Central and South America, these plants belong to the Araceae family. The red "flowers" are actually modified leaves called spathes, which surround the true flowers, known as spadices.`
+    },
+    {
+        "id": 8,
+        plantName: "Rubber Plant",
+        price: 29.99,
+        plantImage: rubberPlant,
+        description: `The rubber plant, scientifically known as Ficus elastica, is a popular and easy-to-care-for houseplant prized for its attractive foliage and air-purifying qualities. It belongs to the fig family (Moraceae) and is native to Southeast Asia, particularly India and Malaysia.`
     },
 ];
 
