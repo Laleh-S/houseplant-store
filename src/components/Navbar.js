@@ -18,12 +18,12 @@ function Navbar() {
                     <img src="/logo512.png" alt="logo" width={80}  />
                     <h1>Evergreen Plants</h1> 
                 </div>
-            <div className="input-group">
+            {/* <div className="input-group"> */}
                 <div className="links">
                     <Link to="/" onClick={handleShopClick}> Shop </Link> 
                     <Link to="/cart"> <LuShoppingBasket  size={30}/></Link>
                 </div>
-            </div>
+            {/* </div> */}
         </div>
         
     )

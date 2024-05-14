@@ -35,6 +35,8 @@
     margin-bottom: 20px;
 }
 
+
+
 /* Styling for the .addToCartBttn class */
 .addToBasketBttn {
     border: #482309;
@@ -50,4 +52,51 @@
     background-color: #c94a4a;
     color: white;
     cursor: pointer;
+}
+
+
+/* Media query for mobile */
+@media screen and (max-width: 768px) {
+    .card-container {
+        width: 90%; /* Adjusted width for mobile */
+        margin: 20px auto; /* Centering and adjusting margin for mobile */
+        margin-top: 50px; /* Adjusted margin-top for mobile */
+    }
+
+    .card-details {
+        margin: 20px; /* Adjusted margin for mobile */
+    }
+
+    .card-details p {
+        text-align: justify;
+        font-size: 12px;
+        margin-top: 20px;
+    }
+
+    .card-details h1 {
+        text-align: justify;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    .card-image {
+        margin: 20px; /* Adjusted margin for mobile */
+        margin-left: 0; /* Remove left margin on mobile */
+    }
+
+    .card-image img {
+        width: 100%; /* Adjusted width to fit container on mobile */
+        max-height: 500px; /* Adjusted max-height for mobile */
+        margin: 60px 10px;
+    }
+
+    .addToBasketBttn {
+        border: #482309;
+        background-color: #A52A2A;
+        border-radius: 10px;
+        color: white;
+        padding: 10px 20px !important;
+        font-size: 10px !important;
+        margin-top: 10px;
+    }
 }

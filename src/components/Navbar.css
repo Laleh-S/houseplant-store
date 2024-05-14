@@ -5,27 +5,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s ease; 
 }
-
 
 .center-content {
     display: flex;
     align-items: center;
-    margin-left: 20px; 
 }
 
 .page-title {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 100px; 
+    margin: 30px; 
     font-size: 15px; 
     color: white;
 }
 
+/* Media query for mobile */
+@media screen and (max-width: 768px) {
+    /* Other styles... */
+
+    .page-title {
+        margin: 10px; /* Adjust margin for mobile */
+        font-size: 12px; /* Adjusted font size for mobile */
+    }
+}
+
 .page-title img {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .links {
@@ -62,6 +69,20 @@
     text-decoration: none;
     color: white;
     font-size: 15px; 
+}
+
+/* Media query for mobile */
+@media screen and (max-width: 768px) {
+    .links {
+        display: flex;
+        align-items: center;
+        margin-right: 10px; /* Adjust margin for mobile */
+    }
+
+    .links a {
+        margin-left: 15px; /* Adjust margin for mobile */
+        font-size: 18px; /* Increase font size for better readability on mobile */
+    }
 }
 
 

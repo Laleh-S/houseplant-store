@@ -1,28 +1,34 @@
 .plants {
     width: 100%;
     display: flex;
-    flex-wrap: wrap; /* Wrapping plants to the next line */
-    justify-content: space-around; /* Distributing plants along the main axis */
+    flex-wrap: wrap;
+    /* Wrapping plants to the next line */
+    justify-content: space-around;
+    /* Distributing plants along the main axis */
     margin-top: 50px;
 }
 
 .plant {
-    width: calc(33.33% - 40px); /* Adjust width to fit three plants per row with margins */
-    max-width: 300px; /* Prevent overflow */
-    margin: 20px; 
-    text-align: center; 
+    width: calc(33.33% - 40px);
+    /* Adjust width to fit three plants per row with margins */
+    max-width: 300px;
+    /* Prevent overflow */
+    margin: 20px;
+    text-align: center;
 }
 
 .plant img {
-    width: 100%; /* Ensuring the image fills its container */
-    height: auto; /* Adjusts based on content */
-    border-radius: 15px; 
+    width: 100%;
+    /* Ensuring the image fills its container */
+    height: auto;
+    /* Adjusts based on content */
+    border-radius: 15px;
 }
 
 .plant-name {
     margin-top: 10px;
     color: #5d5a5a;
-    font-size: 16px; 
+    font-size: 16px;
     transition: opacity 0.3s ease-in-out;
     opacity: 0;
 }
@@ -34,15 +40,18 @@
 /* Adjust the layout for smaller screens */
 @media screen and (max-width: 768px) {
     .plant {
-        width: calc(50% - 40px); /* Adjusts width to fit two plants per row with margins */
+        width: calc(50% - 40px);
+        /* Adjusts width to fit two plants per row with margins */
     }
 }
 
 .shop {
     display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; 
-    flex-direction: column; /* stacking the search bar on top of the plants */
+    justify-content: center;
+    /* Horizontal centering */
+    align-items: center;
+    flex-direction: column;
+    /* stacking the search bar on top of the plants */
 }
 
 
@@ -50,7 +59,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    width: 500px; 
+    width: 500px;
     margin-top: 100px;
 }
 
@@ -65,7 +74,7 @@
 .search-input {
     flex: 1;
     height: 50px;
-    padding: 10px 10px 10px 70px; 
+    padding: 10px 10px 10px 70px;
     border-radius: 20px;
     font-size: 20px;
     border: 3px solid green;
@@ -77,30 +86,35 @@
 
 
 
-
 /* Mobile styling */
 @media screen and (max-width: 768px) {
     .plants {
-        grid-template-columns: 1fr; /* Display one plant per row on smaller screens */
-        margin-top: 20px; /* Adjust margin for spacing */
+        grid-template-columns: 1fr;
+        /* Display one plant per row on smaller screens */
+        margin-top: 20px;
+        /* Adjust margin for spacing */
     }
 
     .plant {
-        width: calc(100% - 40px); /* Adjust width to fit the screen */
-        max-width: 300px; /* Set max width to prevent overflow */
-        margin: 20px auto; /* Center the plant horizontally */
-        height: auto; 
+        width: calc(100% - 40px);
+        /* Adjust width to fit the screen */
+        max-width: 300px;
+        /* Set max width to prevent overflow */
+        margin: 20px auto;
+        /* Center the plant horizontally */
+        height: auto;
     }
 
     .plant img {
-        width: 100%; /* Ensure image fills its container */
-        max-height: 300px; 
-        border-radius: 15px; 
+        width: 100%;
+        /* Ensure image fills its container */
+        max-height: 300px;
+        border-radius: 15px;
     }
 
     .plant-name {
-        margin-top: 10px; 
-        font-size: 16px; 
+        margin-top: 10px;
+        font-size: 16px;
     }
 
     .shop {
@@ -108,11 +122,12 @@
     }
 
     .search-container {
-        width: 90%; /* Adjust width to fit the screen */
+        width: 90%;
+        /* Adjust width to fit the screen */
     }
 
     .search-input {
-        font-size: 16px; 
-        padding: 10px 10px 10px 50px; 
+        font-size: 16px;
+        padding: 10px 10px 10px 50px;
     }
 }
