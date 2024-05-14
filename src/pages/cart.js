@@ -29,7 +29,7 @@ function Cart() {
     return  (
         <div className="cart">
             <div>
-                <h1></h1>
+                <h1>Your Shopping Basket</h1>
             </div>
             <div className="cart-item">
                 {allPlants.map((plant, index) => {

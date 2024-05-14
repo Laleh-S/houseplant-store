@@ -30,7 +30,7 @@ function defaultCart () {
     const [searchQuery, setSearchQuery] = useState(""); // State for search functionality 
     const [checkoutComplete, setCheckoutComplete] = useState(false);
 
-
+    
     // ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ Clears filtered plants after clicking on shop link ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈ 
     function clearFilter() {
         setSearchQuery("");
